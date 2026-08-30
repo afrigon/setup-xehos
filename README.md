@@ -1,10 +1,10 @@
 # setup-xehos
 
-Machine bootstrap for Arch workstations, part of AXR.
+Bootstrap for my personal machines, part of AXR.
 
 ## What it does
 
-`setup-xehos` prepares a workstation for daily use, as a regular user:
+`setup-xehos` prepares a machine for daily use, as a regular user:
 
 - clones https://github.com/afrigon/dotfiles into `~/src/dotfiles` if it
   is not already there
@@ -20,9 +20,10 @@ setup-xehos
 ```
 
 Run as a regular user; the script refuses to run as root. `git` and
-`mise` must be installed — the `base-xehos` metapackage provides both.
+`mise` must be installed — on Arch the `base-xehos` metapackage provides
+both, on macOS Homebrew does.
 
-## Fresh-machine flow
+## Fresh-machine flow (Arch)
 
 Documented in the [axr](https://github.com/afrigon/axr) repository:
 install the axr keyring and repository, bootstrap paru, then

@@ -35,6 +35,7 @@ Add it to `/etc/pacman.conf`:
 
 ```ini
 [axr]
+SigLevel = Optional
 Server = https://axr.frigon.app/$arch
 ```
 

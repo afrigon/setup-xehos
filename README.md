@@ -25,10 +25,43 @@ both, on macOS Homebrew does.
 
 ## Fresh-machine flow (Arch)
 
-Documented in the [axr](https://github.com/afrigon/axr) repository:
-install the axr keyring and repository, bootstrap paru, then
-`paru -S setup-xehos`.
+Enable the [axr](https://github.com/afrigon/axr) repository:
+
+```sh
+sudo pacman -U https://axr.frigon.app/axr-keyring.pkg.tar.zst
+```
+
+Add it to `/etc/pacman.conf`:
+
+```ini
+[axr]
+Server = https://axr.frigon.app/$arch
+```
+
+Install [paru](https://github.com/Morganamilo/paru):
+
+```sh
+git clone https://aur.archlinux.org/paru.git
+cd paru
+makepkg --syncdeps --install
+```
+
+Install and run the bootstrap:
+
+```sh
+paru -S setup-xehos
+setup-xehos
+```
 
 The `setup-xehos` package is built by the PKGBUILD in the
 [axr](https://github.com/afrigon/axr) repository from a tagged release of
 this repository.
+
+## Fresh-machine flow (macOS)
+
+Install [Homebrew](https://brew.sh), then:
+
+```sh
+brew install git mise
+curl -fsSL https://raw.githubusercontent.com/afrigon/setup-xehos/main/setup-xehos | sh
+```

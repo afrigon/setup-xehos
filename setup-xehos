@@ -1,0 +1,16 @@
+#!/bin/sh
+set -eu
+
+if [ "$(id -u)" -eq 0 ]; then
+    echo "setup-xehos: must run as a regular user, not root" >&2
+    exit 1
+fi
+
+if [ ! -d "$HOME/src/dotfiles" ]; then
+    git clone https://github.com/afrigon/dotfiles "$HOME/src/dotfiles"
+fi
+
+cd "$HOME/src/dotfiles"
+
+mise trust
+mise run bootstrap

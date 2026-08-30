@@ -28,6 +28,8 @@ both, on macOS Homebrew does.
 Enable the [axr](https://github.com/afrigon/axr) repository:
 
 ```sh
+sudo pacman-key --recv-key 50348DB24B2AE82D6B46D9D555F27928838BC19E --keyserver keyserver.ubuntu.com
+sudo pacman-key --lsign-key 50348DB24B2AE82D6B46D9D555F27928838BC19E
 sudo pacman -U https://axr.frigon.app/axr-keyring.pkg.tar.zst
 ```
 

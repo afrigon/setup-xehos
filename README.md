@@ -20,15 +20,13 @@ setup-xehos
 ```
 
 Run as a regular user; the script refuses to run as root. `git` and
-`mise` must be installed — the `axr` metapackage provides both.
+`mise` must be installed — the `base-xehos` metapackage provides both.
 
 ## Fresh-machine flow
 
-```sh
-pacman -U axr-keyring-*.pkg.tar.zst
-pacman -S setup-xehos
-setup-xehos
-```
+Documented in the [axr](https://github.com/afrigon/axr) repository:
+install the axr keyring and repository, bootstrap paru, then
+`paru -S setup-xehos`.
 
 The `setup-xehos` package is built by the PKGBUILD in the
 [axr](https://github.com/afrigon/axr) repository from a tagged release of
